@@ -15,11 +15,11 @@ HOME="${PWD}"
 WORK="${HOME}/work"
 
 # Kernel Source, this should be your kernel source repository and it's branch.
-KERNEL_SOURCE_URL="https://github.com/cd-Crypton/android_kernel_realme_sm6225"
-KERNEL_BRANCH="thirteen-main"
+KERNEL_SOURCE_URL="https://github.com/Risti699/Project-KARA"
+KERNEL_BRANCH="tmp"
 
 # Kernel/Device Name, change it based on your device, of course.
-KERNEL="sm6225"
+KERNEL="Onclite"
 
 # Kernel Source Path, this will be your kernel source directory after clone.
 KERNEL_SRC="${WORK}/${KERNEL}"
@@ -51,7 +51,7 @@ cd "${KERNEL_SRC}" || exit 1
 
 # Export Additional Information, change it all according to your wants.
 export KBUILD_BUILD_HOST="${KERNEL}"
-export KBUILD_BUILD_USER="cd-Crypton"
+export KBUILD_BUILD_USER="PapiLer"
 
 # Cleanup OUT Directory, in case there's already out folder.
 rm -rf out
@@ -67,7 +67,7 @@ make_fun() {
 }
 
 # Prepare _defconfig - Change it base on your choice in arm/../configs/
-make_fun vendor/bengal-custom_defconfig vendor/bengal-oplus.config
+make_onc onclite-perf_defconfig
 
 # Start Compiling Kernel with build.log
-make_fun -j3 2>&1 | tee build.log
+make_onc -j3 2>&1 | tee build.log
