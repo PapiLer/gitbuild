@@ -8,8 +8,6 @@ on:
 env:
   TZ: Asia/Jakarta
   DEVICE: ${{ github.event.inputs.device }}
-  token: ${{ secrets.TOKEN }}
-  chat_id: ${{ secrets.CHAT_ID }}
 jobs:
   kernel-build:
     runs-on: ubuntu-22.04
