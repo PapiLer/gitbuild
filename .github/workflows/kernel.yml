@@ -45,7 +45,7 @@ jobs:
         run: |
           git clone $REPO -b $BRANCH kernel 
           cd kernel
-          if [ "${DEVICE}" = "RMX2020" ]; then
+          if [ "${DEVICE}" = "onclite" ]; then
             wget https://raw.githubusercontent.com/PapiLer/Cuma_anu/main/aosp_clang.sh
             bash aosp_clang.sh
           fi
