@@ -4,13 +4,13 @@
 name: Kernel CI
 
 on:
-  workflow_dispatch:
-      device: (Onc/Onclite)
-      repo: https://github.com/PapiLer/Karamel.git
-      branch: JFla-Karamel
+   workflow_dispatch:
+     input:
+       device: onclite
 
 env:
   TZ: Asia/Jakarta
+  DEVICE: ${{ github.event.inputs.device }}
   token: ${{ secrets.TOKEN }}
   chat_id: ${{ secrets.CHAT_ID }}
 
@@ -33,7 +33,7 @@ jobs:
 
       - name: Lets compile
         run: |
-          git clone $REPO -b $BRANCH kernel 
+          git clone https://github.com/PapiLer/Karamel.git -b JFla-Karamel kernel 
           cd kernel
           if [ "${DEVICE}" = "onclite" ]; then
             wget https://raw.githubusercontent.com/PapiLer/Cuma_anu/main/aosp_clang.sh
