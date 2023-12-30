@@ -5,22 +5,12 @@ name: Kernel CI
 
 on:
   workflow_dispatch:
-    inputs:
-      device:
-          description: device codename (Onc/Onclite)
-          required: true
-      repo:
-          description: https://github.com/PapiLer/Karamel.git
-          required: true
-      branch:
-          description: JFla-Karamel
-          required: true   
+      device: (Onc/Onclite)
+      repo: https://github.com/PapiLer/Karamel.git
+      branch: JFla-Karamel
 
 env:
   TZ: Asia/Jakarta
-  DEVICE: ${{ github.event.inputs.device }}
-  REPO: ${{ github.event.inputs.repo }}
-  BRANCH: ${{ github.event.inputs.branch }}
   token: ${{ secrets.TOKEN }}
   chat_id: ${{ secrets.CHAT_ID }}
 
