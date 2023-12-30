@@ -1,23 +1,18 @@
 # Kernel compile workflow for personal usage
-# By Sarthak Roy (sarthakroy2002@gmail.com)
 
 name: Kernel CI
-
 on:
-   workflow_dispatch:
-     input:
-       device: onclite
-
+  workflow_dispatch:
+    input:
+      device: onclite
 env:
   TZ: Asia/Jakarta
   DEVICE: ${{ github.event.inputs.device }}
   token: ${{ secrets.TOKEN }}
   chat_id: ${{ secrets.CHAT_ID }}
-
 jobs:
   kernel-build:
     runs-on: ubuntu-22.04
-
     steps:
       - name: Initializing environment
         run: |
@@ -30,10 +25,8 @@ jobs:
           sudo apt update
           sudo apt install -y bc bison build-essential ccache curl flex glibc-source g++-multilib gcc-multilib binutils-aarch64-linux-gnu git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-gtk3-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev python2 tmate ssh neofetch
           neofetch
-
       - name: Lets compile
         run: |
-        git clone https://github.com/PapiLer/Karamel.git -b JFla-Karamel kernel 
-        cd kernel
-        curl -s https://raw.githubusercontent.com/PapiLer/Cuma_anu/main/aosp_clang.sh | bash
-          
+          git clone https://github.com/PapiLer/Karamel.git -b JFla-Karamel kernel 
+          cd kernel
+          curl -s https://raw.githubusercontent.com/PapiLer/Cuma_anu/main/aosp_clang.sh | bash
