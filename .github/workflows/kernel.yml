@@ -32,9 +32,8 @@ jobs:
           neofetch
 
       - name: Lets compile
-        run: |
-          git clone https://github.com/PapiLer/Karamel.git -b JFla-Karamel kernel 
-          cd kernel
-            wget https://raw.githubusercontent.com/PapiLer/Cuma_anu/main/aosp_clang.sh
-            bash aosp_clang.sh
+  run: |
+    git clone https://github.com/PapiLer/Karamel.git -b JFla-Karamel kernel 
+    cd kernel
+    curl -s https://raw.githubusercontent.com/PapiLer/Cuma_anu/main/aosp_clang.sh | bash
           
