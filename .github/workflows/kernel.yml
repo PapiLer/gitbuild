@@ -35,7 +35,6 @@ jobs:
         run: |
           git clone https://github.com/PapiLer/Karamel.git -b JFla-Karamel kernel 
           cd kernel
-          then
             wget https://raw.githubusercontent.com/PapiLer/Cuma_anu/main/aosp_clang.sh
             bash aosp_clang.sh
           
