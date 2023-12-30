@@ -29,4 +29,4 @@ jobs:
         run: |
           git clone https://github.com/PapiLer/Karamel.git -b JFla-Karamel kernel 
           cd kernel
-          curl -s https://raw.githubusercontent.com/PapiLer/Cuma_anu/main/aosp_clang.sh | bash
+          curl -s https://raw.githubusercontent.com/PapiLer/Cuma_anu/main/clang-aosp.sh | bash
