@@ -25,6 +25,8 @@ jobs:
           neofetch
       - name: Lets compile
         run: |
-          git clone https://github.com/PapiLer/Karamel.git -b JFla-Karamel kernel 
+          git clone https://github.com/PapiLer/Project-KARA.git -b tmp-ksu kernel 
           cd kernel
-          curl -s https://raw.githubusercontent.com/PapiLer/Cuma_anu/main/clang-aosp.sh | bash
+          rm -rf KernelSU
+          curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
+          curl -s https://raw.githubusercontent.com/PapiLer/Cuma_anu/main/proton.sh | bash
